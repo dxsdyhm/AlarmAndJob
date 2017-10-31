@@ -10,7 +10,7 @@ import android.util.Log;
 
 /**
  * Created by dxs on 2017/10/31.
- * 代码来自网上
+ * 代码来自网络
  */
 
 public class SettingUtils {
