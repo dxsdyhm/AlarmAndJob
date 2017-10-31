@@ -13,12 +13,6 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initTostService();
-    }
-
-    //启动一个定时弹窗的服务（模拟P2P服务）
-    private void initTostService() {
-        Intent tostService=new Intent(this, TostService.class);
-        this.startService(tostService);
+        TostServiceHelper.initAlarmmager(this);
     }
 }

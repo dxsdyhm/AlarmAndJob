@@ -27,12 +27,19 @@ public class TostService extends Service {
     public void onCreate() {
         super.onCreate();
         Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show();
+        Log.e(TAG,"onCreate"+getShowTime());
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Toast.makeText(this,"onStartCommand:"+getShowTime(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"时间:"+getShowTime(),Toast.LENGTH_LONG).show();
         return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.e(TAG,"onDestroy"+getShowTime());
     }
 
     private String getShowTime(){

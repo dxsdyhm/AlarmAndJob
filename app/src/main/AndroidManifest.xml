@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <service android:name="service.TostService"/>
+        <receiver android:name=".AlarmRecive"/>
     </application>
 
 </manifest>
