@@ -10,10 +10,24 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    signingConfigs {
+        releaseconfig {
+            Properties properties = new Properties()
+            //加载本地local.properties文件
+            if (rootProject.file('local.properties').exists()) {
+                properties.load(rootProject.file("local.properties").newDataInputStream())
+                if(properties.get("storeFile")!=null){
+                    storeFile file(properties.get("storeFile"))
+                    storePassword properties.get("storePassword")
+                    keyAlias properties.get("keyAlias")
+                    keyPassword properties.get("keyPassword")
+                }
+            }else if(System.getenv("FLOW_CERTIFICATE_FILE")!=null){
+                storeFile file(System.getenv("FLOW_CERTIFICATE_FILE"))
+                storePassword System.getenv("FLOW_KEYSTORE_PASS")
+                keyAlias System.getenv("FLOW_ALIAS_NAME")
+                keyPassword System.getenv("FLOW_ALIAS_PASS")
+            }
         }
     }
 }

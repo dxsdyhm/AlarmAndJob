@@ -1,0 +1,21 @@
+language: android
+android:
+  components:
+    # Uncomment the lines below if you want to
+    # use the latest revision of Android SDK Tools
+     - tools
+     - platform-tools
+
+    # Additional components
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - addon-google_apis-google-19
+
+    script:
+    - ./gradlew :app:assembleRelease
+
+    before_install:
+    - gem install fir-cli
+    after_deploy:
+    - fir p app/build/outputs/apk/app-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
