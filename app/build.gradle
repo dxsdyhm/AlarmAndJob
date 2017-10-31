@@ -11,7 +11,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
-        releaseconfig {
+        release {
+            // default keystore file, PLZ config file path in local.properties
             Properties properties = new Properties()
             //加载本地local.properties文件
             if (rootProject.file('local.properties').exists()) {
@@ -30,6 +31,14 @@ android {
             }
         }
     }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
 }
 
 dependencies {
