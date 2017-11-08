@@ -12,6 +12,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import utils.ShowNotification;
+
 /**
  * Created by USER on 2017/10/31.
  */
@@ -28,6 +30,7 @@ public class ToastJobService extends JobService {
     @Override
     public boolean onStartJob(JobParameters jobParameters) {
         Log.e(TAG,"onStartJob:"+getShowTime());
+        ShowNotification.show(this);
         Toast.makeText(this,"Job时间:"+getShowTime(),Toast.LENGTH_LONG).show();
         return false;
     }
@@ -35,7 +38,7 @@ public class ToastJobService extends JobService {
     @Override
     public boolean onStopJob(JobParameters jobParameters) {
         Log.e(TAG,"onStopJob:");
-        return false;
+        return true;
     }
 
     private String getShowTime(){

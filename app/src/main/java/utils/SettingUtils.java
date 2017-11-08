@@ -41,7 +41,8 @@ public class SettingUtils {
             } else if (getMobileType().equals("Letv")) { // 乐视2测试通过
                 intent.setAction("com.letv.android.permissionautoboot");
             } else if (getMobileType().equals("samsung")) { // 三星Note5测试通过
-                componentName = new ComponentName("com.samsung.android.sm_cn", "com.samsung.android.sm.ui.ram.AutoRunActivity");
+                //componentName = new ComponentName("com.samsung.android.sm_cn", "com.samsung.android.sm.ui.ram.AutoRunActivity");
+                componentName = new ComponentName(Phone_Sumsung.battery_pakage, Phone_Sumsung.battery_activity);
             } else if (getMobileType().equals("HUAWEI")) { // 华为测试通过
                 componentName = new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.optimize.process.ProtectActivity");
             } else if (getMobileType().equals("vivo")) { // VIVO测试通过
@@ -73,5 +74,10 @@ public class SettingUtils {
             intent = new Intent(Settings.ACTION_SETTINGS);
             context.startActivity(intent);
         }
+    }
+
+    private class Phone_Sumsung{
+        private static final String battery_pakage="com.samsung.android.lool";
+        private static final String battery_activity="com.samsung.android.sm.ui.battery.BatteryActivity";
     }
 }

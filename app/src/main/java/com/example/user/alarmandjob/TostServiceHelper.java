@@ -35,6 +35,7 @@ public class TostServiceHelper {
     public static void starReapte(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             initScedule(context);
+//            initAlarmmager(context);
         } else {
             initAlarmmager(context);
         }
@@ -46,6 +47,7 @@ public class TostServiceHelper {
         JobInfo jobInfo = new JobInfo.Builder(1, new ComponentName(context.getPackageName(), ToastJobService.class.getName()))
                 .setPeriodic(SCEDULE_TIME)
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
+                .setRequiresCharging(true)
                 .build();
         jobScheduler.schedule(jobInfo);
     }

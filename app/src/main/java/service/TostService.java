@@ -11,6 +11,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import utils.ShowNotification;
+
 /**
  * Created by USER on 2017/10/31.
  */
@@ -26,12 +28,12 @@ public class TostService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show();
         Log.e(TAG,"onCreate"+getShowTime());
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        ShowNotification.show(this);
         Toast.makeText(this,"时间:"+getShowTime(),Toast.LENGTH_LONG).show();
         return super.onStartCommand(intent, flags, startId);
     }

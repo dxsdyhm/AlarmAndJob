@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AlarmAndJob</string>
+    <string name="toast_test">Toast测试</string>
+    <string name="battery_set">电量管理</string>
 </resources>
