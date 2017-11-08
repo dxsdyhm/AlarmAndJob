@@ -6,6 +6,7 @@ import com.dxs.autostart.utils.data.BaseData;
 import com.dxs.autostart.utils.data.HuaWeiData;
 import com.dxs.autostart.utils.data.LeTVData;
 import com.dxs.autostart.utils.data.MeizuData;
+import com.dxs.autostart.utils.data.OPPOData;
 import com.dxs.autostart.utils.data.XiaoMiData;
 
 /**
@@ -42,6 +43,8 @@ public abstract class BaseJumpUtils {
             return new LeTVData();
         }else if(isTargetPhone(Meizu)){
             return new MeizuData();
+        }else if(isTargetPhone(OPPO)){
+            return new OPPOData();
         }
         return null;
     }
