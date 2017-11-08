@@ -1,5 +1,5 @@
 # AlarmAndJob [![Build Status](https://travis-ci.org/dxsdyhm/AlarmAndJob.svg?branch=master)](https://travis-ci.org/dxsdyhm/AlarmAndJob) [![](https://jitpack.io/v/dxsdyhm/AlarmAndJob.svg)](https://jitpack.io/#dxsdyhm/AlarmAndJob)
-有条件自动重启的服务
+允许自启动与电量设置跳转
 
 [下载地址][dowmload]
 
