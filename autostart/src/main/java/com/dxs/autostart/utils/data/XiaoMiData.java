@@ -22,9 +22,6 @@ public class XiaoMiData extends BaseData {
     private final static String[] AutoStar1 = new String[]{"com.miui.securitycenter", "com.miui.permcenter.autostart.AutoStartManagementActivity"};
     private final static int AutoStarCount = 1;
 
-    public XiaoMiData() {
-    }
-
     @Override
     public HashMap<String, String> getBatterInfo() {
         HashMap<String, String> batterinfo = new HashMap<>();
