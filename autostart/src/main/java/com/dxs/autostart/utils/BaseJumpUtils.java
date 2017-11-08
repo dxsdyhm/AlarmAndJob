@@ -5,6 +5,7 @@ import android.os.Build;
 import com.dxs.autostart.utils.data.BaseData;
 import com.dxs.autostart.utils.data.HuaWeiData;
 import com.dxs.autostart.utils.data.LeTVData;
+import com.dxs.autostart.utils.data.MeizuData;
 import com.dxs.autostart.utils.data.XiaoMiData;
 
 /**
@@ -39,6 +40,8 @@ public abstract class BaseJumpUtils {
             return new HuaWeiData();
         }else if(isTargetPhone(Letv)){
             return new LeTVData();
+        }else if(isTargetPhone(Meizu)){
+            return new MeizuData();
         }
         return null;
     }

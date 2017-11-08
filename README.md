@@ -16,7 +16,7 @@
 * in your app build.gradle
 ```gradle
     dependencies {
-        compile 'com.github.dxsdyhm:AlarmAndJob:v1.1'
+        compile 'com.github.dxsdyhm:AlarmAndJob:v1.2'
     }
 ```
 
