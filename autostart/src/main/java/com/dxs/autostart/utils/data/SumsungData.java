@@ -26,7 +26,7 @@ public class SumsungData extends BaseData {
     public HashMap<String, String> getBatterInfo() {
         HashMap<String, String> batterinfo = new HashMap<>();
         batterinfo.put("battery1", getSpliteName(battery1));
-        batterinfo.put("battery2", getSpliteName(battery2));
+//        batterinfo.put("battery2", getSpliteName(battery2));
         batterinfo.put("battery3", getSpliteName(battery3));
         return batterinfo;
     }
