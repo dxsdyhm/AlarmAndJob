@@ -30,7 +30,6 @@ public class AutoStartUtils extends BaseJumpUtils {
     @Override
     public boolean isTargetActivityFinded() {
         BaseData data=getPhoneData();
-        Log.e("dxsTest","data:"+data.getClass());
         if(data!=null){
             find=data.getUseAutoStartInfo(mContext);
         }
