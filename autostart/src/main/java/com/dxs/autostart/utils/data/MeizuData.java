@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class MeizuData extends BaseData {
 
     //魅族电量管理页面可能的情况（没有电量设置）
-    private final static String[] battery1 = new String[]{"com.meizu.safe", ""};
+    private final static String[] battery1 = new String[]{"com.meizu.safe", "null"};
     private final static int batteryCount = 1;
 
     //魅族自启动页面可能的情况

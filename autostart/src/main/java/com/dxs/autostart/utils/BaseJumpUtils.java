@@ -8,6 +8,7 @@ import com.dxs.autostart.utils.data.LeTVData;
 import com.dxs.autostart.utils.data.MeizuData;
 import com.dxs.autostart.utils.data.OPPOData;
 import com.dxs.autostart.utils.data.SumsungData;
+import com.dxs.autostart.utils.data.VivoData;
 import com.dxs.autostart.utils.data.XiaoMiData;
 
 /**
@@ -23,6 +24,7 @@ public abstract class BaseJumpUtils {
     public static final String Meizu="Meizu";//魅族
     public static final String OPPO="OPPO";//oppo
     public static final String ulong="ulong";//360
+    public static final String OnePlus="OnePlus";//一加
 
     public String getMobileType() {
         return Build.MANUFACTURER;
@@ -48,6 +50,8 @@ public abstract class BaseJumpUtils {
             return new OPPOData();
         }else if(isTargetPhone(samsung)){
             return new SumsungData();
+        }else if(isTargetPhone(vivo)){
+            return new VivoData();
         }
         return null;
     }
