@@ -20,7 +20,7 @@ import java.util.HashMap;
 //    6.0	  4.0
 //    6.0	  4.1       √1        √1
 //    7.0	  5.0       √1        √1
-//    8.0	  8.0
+//    8.0	  8.0       √4        √1
 public class HuaWeiData extends BaseData {
 
     //华为电量管理页面可能的情况
@@ -34,6 +34,8 @@ public class HuaWeiData extends BaseData {
     private final static String[] AutoStar2 = new String[]{"com.huawei.systemmanager", "com.huawei.systemmanager.optimize.bootstart.BootStartActivity"};
     //优先使用关联启动
     private final static String[] AutoStar3=new String[]{"com.huawei.systemmanager", "com.huawei.systemmanager.startupmgr.ui.StartupAwakedAppListActivity"};
+    //EMUI 8.0  Android 8.0
+    private final static String[] AutoStar4=new String[]{"com.huawei.systemmanager", "com.huawei.systemmanager.appcontrol.activity.StartupAppControlActivity"};
     private final static int AutoStarCount = 2;
     @Override
     public HashMap<String, String> getBatterInfo() {
@@ -48,6 +50,7 @@ public class HuaWeiData extends BaseData {
         autoStart.put("AutoStar3", getSpliteName(AutoStar3));
         autoStart.put("AutoStar1", getSpliteName(AutoStar1));
         autoStart.put("AutoStar2", getSpliteName(AutoStar2));
+        autoStart.put("AutoStar4", getSpliteName(AutoStar4));
         return autoStart;
     }
 }
