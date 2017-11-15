@@ -27,7 +27,7 @@
             AutoStartUtils.newInstance(context).toTargetActivity();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(context,"无法自动跳转！",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,"无法自动跳转!!!!！",Toast.LENGTH_LONG).show();
         }
 ```
 
