@@ -7,7 +7,7 @@ android:
     - platform-tools
 
 script:
-  - chmod +x ./gradlew :app:assembleDebug
+  - chmod +x ./gradlew assembleDebug
 
 before_install:
   - gem install fir-cli
