@@ -8,7 +8,7 @@ android:
     - platform-tools
 
 script:
-- ./gradlew :app:assembleDebug
+- ./gradlew build
 
 before_install:
   - gem install fir-cli
