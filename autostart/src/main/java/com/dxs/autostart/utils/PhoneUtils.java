@@ -16,5 +16,4 @@ public class PhoneUtils {
         info.append("\n");
         return info.toString();
     }
-
 }
