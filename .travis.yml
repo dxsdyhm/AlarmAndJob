@@ -1,19 +1,25 @@
 language: android
-sudo: required
+sudo: false
+git:
+  depth: 3 #将git depth设置相对小的值,加快构建速度
+jdk:
+  - oraclejdk8 #lambda表达式支持,如果工程中使用了rxJava等类库时添加
 android:
   components:
-    # Uncomment the lines below if you want to
-    # use the latest revision of Android SDK Tools
     - tools
-    - platform-tools
-
-before_script:
-- chmod +x gradlew
+    - build-tools-25.0.3
+    - android-25
+    - extra-android-m2repository
+    - extra-android-support
 
 script:
-- ./gradlew :app:assembleDebug
+  - "./gradlew assembleDebug"
 
 before_install:
-  - gem install fir-cli
+- chmod +x gradlew
+- gem install fir-cli
 after_deploy:
   - fir p app/build/outputs/apk/app-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
+
+notifications:
+  webhooks:https://oapi.dingtalk.com/robot/send?access_token=a89c1543026b69693022764f0543fac45497e12bb393270e5f4c987a7376d286
