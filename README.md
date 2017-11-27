@@ -23,12 +23,12 @@
 
 ## 使用
 ```java
-        try {
-            AutoStartUtils.newInstance(context).toTargetActivity();
-        } catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(context,"无法自动跳转!!!!！",Toast.LENGTH_LONG).show();
-        }
+    try {
+        AutoStartUtils.newInstance(context).toTargetActivity();
+    } catch (Exception e) {
+        e.printStackTrace();
+        Toast.makeText(context,"无法自动跳转!!!!！",Toast.LENGTH_LONG).show();
+    }
 ```
 
 [dowmload]:http://fir.im/ykfu
