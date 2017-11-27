@@ -13,11 +13,13 @@ import java.util.HashMap;
  */
 
 public class OPPOData extends BaseData {
-    //魅族电量管理页面可能的情况（没有电量设置）
-    private final static String[] battery1 = new String[]{"com.coloros.oppoguardelf", "com.coloros.powermanager.fuelgaue.PowerAppsBgSetting"};
+    //OPPO电量管理页面可能的情况（没有电量设置）,直接进入指定APP的设置页，设置后不起作用，改为用户自选
+    //猜测是输入的参数系统没有识别（需要查看系统源码，按系统方式输入参数）
+//    private final static String[] battery1 = new String[]{"com.coloros.oppoguardelf", "com.coloros.powermanager.fuelgaue.PowerAppsBgSetting"};
+    private final static String[] battery1 = new String[]{"com.coloros.oppoguardelf", "com.coloros.powermanager.fuelgaue.PowerUsageModelActivity"};
     private final static int batteryCount = 1;
 
-    //魅族自启动页面可能的情况
+    //OPPO自启动页面可能的情况
     private final static String[] AutoStar1 = new String[]{"com.coloros.safecenter", "com.coloros.safecenter.startupapp.StartupAppListActivity"};
     private final static int AutoStarCount = 1;
 
@@ -37,9 +39,8 @@ public class OPPOData extends BaseData {
 
     @Override
     public Intent getBatterIntent(Context mContext) {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
+        Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
         String[] find=getUseBatterInfo(mContext);
         ComponentName name=new ComponentName(find[0],find[1]);
         intent.setComponent(name);
