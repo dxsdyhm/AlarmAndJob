@@ -15,11 +15,16 @@ android:
 script:
   - "./gradlew assembleDebug"
 
+script:
+    - "./gradlew assembleDebug"
+    - fir login 58e870036c7798894efce2037c563ab6 #fir账号的Token
+    - fir me #打印身份信息,验证是否登录成功
+    - find ./ -name app-debug.apk
+    - fir p ./app/build/outputs/apk/app-debug.apk #自动发布应用至fir内测平台
+
 before_install:
-- chmod +x gradlew
-- gem install fir-cli
-after_deploy:
-  - fir p app/build/outputs/apk/app-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
+    - chmod +x gradlew
+    - gem install fir-cli #安装fir命令行客户端
 
 notifications:
   webhooks:https://oapi.dingtalk.com/robot/send?access_token=a89c1543026b69693022764f0543fac45497e12bb393270e5f4c987a7376d286
