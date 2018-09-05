@@ -1,5 +1,8 @@
 # AlarmAndJob [![Build Status](https://travis-ci.org/dxsdyhm/AlarmAndJob.svg?branch=master)](https://travis-ci.org/dxsdyhm/AlarmAndJob) [![](https://jitpack.io/v/dxsdyhm/AlarmAndJob.svg)](https://jitpack.io/#dxsdyhm/AlarmAndJob)
-允许自启动与电量设置跳转
+允许自启动与电量设置跳转  
+
+> 如果发现某些机型出现问题，欢迎反馈issue
+> 如果有补充已有机型的Data,可以pull，共同完善
 
 [下载地址][dowmload]
 
